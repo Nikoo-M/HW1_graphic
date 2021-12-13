@@ -5,13 +5,13 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL2_gfx.h>
 #include <string>
-// comment
+
 
 using namespace std;
 
 void rect(SDL_Renderer *Renderer, int x, int y, int w, int h, int R, int G, int B, int fill_boolian);
 
-double MAX(int array[], int n);
+int L(int arr[], int n);
 
 int main(int argc, char *argv[]) {
 
@@ -42,9 +42,9 @@ int main(int argc, char *argv[]) {
     SDL_Event *e = new SDL_Event();
 
     bool clicked = false;
-    double max,h;
-    int r, G , B ;
-    int counter[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    double h;
+    int r, G , B ,b,n=10;
+    int counter[n] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     while (!clicked) {
 //            rect(m_renderer,0,0,1200,540,53,81,92,1);
@@ -56,11 +56,12 @@ int main(int argc, char *argv[]) {
         if (e->type == SDL_MOUSEBUTTONDOWN) {
             r = rand();
             r %= 10;
-            counter[r]++;
-            max = MAX(counter[], 10);
-            for (int i = 0: i < 10:i++)
+            counter[r] = counter[r] + 1;
+            b = L (counter[] , n);
+
+            for (int i = 0; i < 10;i++)
             {
-                h = (counter[i]/max)*600;
+                h = (counter[i]/b)*600;
                 if(counter[i] < 10){
                     G=255;
                     B=255;
@@ -77,6 +78,7 @@ int main(int argc, char *argv[]) {
                 SDL_RenderPresent( m_renderer );
 
             }
+        }
 
             if (e->type == SDL_QUIT) {
                 clicked = true;
@@ -84,8 +86,8 @@ int main(int argc, char *argv[]) {
 
 
             }
-        }
     }
+
 
 
     SDL_DestroyWindow(m_window);
@@ -112,15 +114,12 @@ void rect(SDL_Renderer *Renderer, int x, int y, int w, int h, int R, int G, int 
 
 }
 
-double MAX(int array[], int n) {
+int L(int arr[],int n) {
     int i;
-    int max = array[0];
+    int largest = arr[0];
     for (i = 1; i < n; i++)
-        if (array[i] > max)
-            max = array[i];
+        if (arr[i] > largest)
+            largest = arr[i];
 
-    return max;
+    return largest;
 }
-
-
-

@@ -1,3 +1,0 @@
-/Users/nikoomoradi/Desktop/SlUT/Q2_graphic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/nikoomoradi/Desktop/SlUT/Q2_graphic/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/nikoomoradi/Desktop/SlUT/Q2_graphic/cmake-build-debug/CMakeFiles/Q2_graphic.dir
